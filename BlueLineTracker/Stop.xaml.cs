@@ -46,7 +46,8 @@ namespace BlueLineTracker
 
         public void getResults(string websiteURL)
         {
-            PredictionsStatus.Text = "Loading...";
+            PredictionsStatus.Text = "";
+            ProgressBar.Visibility = Visibility.Visible;
             WebClient c = new WebClient();
             Random random = new Random();
             websiteURL += "?random=" + random.Next().ToString();
@@ -61,7 +62,6 @@ namespace BlueLineTracker
                 try
                 {
                     string s = e.Result;
-
                     DataContractJsonSerializer serializer =
                         new DataContractJsonSerializer(typeof(Predictions));
                     System.IO.MemoryStream ms = new
@@ -93,6 +93,8 @@ namespace BlueLineTracker
                 {
                     PredictionsStatus.Text = "Failed to load predictions";
                 }
+                ProgressBar.Visibility = Visibility.Collapsed;
+
                 }
         }
 
