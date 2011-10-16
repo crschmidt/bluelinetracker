@@ -157,7 +157,7 @@ namespace BlueLineTracker
             StandardTileData NewTileData = new StandardTileData
             {
                 Title = currentRoute.direction + "." + currentRoute.title.Replace(" Station", ""),
-                BackgroundImage = new Uri("MBTA.png", UriKind.Relative),
+                BackgroundImage = new Uri("MBTAblue.png", UriKind.Relative),
             };
             ShellTile.Create(
                 new Uri(

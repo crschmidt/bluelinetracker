@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
   <App xmlns="" ProductID="{967e35a5-b925-4282-83fb-2a8982d11606}" Title="Blue Line Tracker" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PhoneApp6 author" Description="Sample description" Publisher="PhoneApp6">
-    <IconPath IsRelative="true" IsResource="false">MBTA62.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">MBTAblue62.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_IDENTITY_USER" />
        <Capability Name="ID_CAP_NETWORKING" />
@@ -15,7 +15,7 @@
     <Tokens>
       <PrimaryToken TokenID="PhoneApp6Token" TaskName="_default">
         <TemplateType5>
-          <BackgroundImageURI IsRelative="true" IsResource="false">MBTA173.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">MBTAblue173.png</BackgroundImageURI>
           <Count>0</Count>
           <Title>Blue Line Tracker</Title>
         </TemplateType5>
