@@ -16,7 +16,7 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 
 
-namespace RedLineTracker
+namespace BlueLineTracker
 {
     public partial class Page2 : PhoneApplicationPage
     {
@@ -36,7 +36,7 @@ namespace RedLineTracker
             {
                 routes = new Routes();
                 loadComplete = true;
-                getResults("http://developer.mbta.com/Data/Red.json");
+                getResults("http://developer.mbta.com/Data/Blue.json");
             }
         }
         void Page2_Loaded(object sender, RoutedEventArgs e)
@@ -105,20 +105,20 @@ namespace RedLineTracker
             {
                 Boolean found = false;
                 Route r = null;
-                if (routes.northRoutes.ContainsKey(key))
+                if (routes.eastRoutes.ContainsKey(key))
                 {
-                    r = routes.northRoutes[key];
+                    r = routes.eastRoutes[key];
                     found = true;
                 }
-                else if (routes.southRoutes.ContainsKey(key))
+                else if (routes.westRoutes.ContainsKey(key))
                 {
-                    r = routes.southRoutes[key];
+                    r = routes.westRoutes[key];
                     found = true;
                 }
                 if (found)
                 {
                     PageTitle.Text = r.title;
-                    Direction.Text = r.direction == "N" ? "Northbound" : "Southbound";
+                    Direction.Text = r.direction == "E" ? "Eastbound" : "Westbound";
                     currentRoute = r;
                 }
             }
@@ -130,7 +130,7 @@ namespace RedLineTracker
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            getResults("http://developer.mbta.com/Data/Red.json");
+            getResults("http://developer.mbta.com/Data/Blue.json");
         }
 
         private void SwapIcon_Click(object sender, EventArgs e)
@@ -138,15 +138,15 @@ namespace RedLineTracker
             string station = key.Substring(0, key.Length - 1);
             string newstation = null;
             char direction = key[4];
-            if (direction == 'N')
+            if (direction == 'E')
             {
-                newstation = station + "S";
+                newstation = station + "W";
             }
-            else if (direction == 'S')
+            else if (direction == 'W')
             {
-                newstation = station + "N";
+                newstation = station + "E";
             }
-            if (newstation != null && (routes.northRoutes.ContainsKey(newstation) ||routes.southRoutes.ContainsKey(newstation)))
+            if (newstation != null && (routes.eastRoutes.ContainsKey(newstation) ||routes.westRoutes.ContainsKey(newstation)))
             {
                 NavigationService.Navigate(new Uri("/Stop.xaml?key=" + newstation, UriKind.Relative));
             }

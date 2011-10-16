@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010 Express for Windows Phone
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedLineTracker", "RedLineTracker\RedLineTracker.csproj", "{C4F2B533-88EA-4D1D-BC94-DFDA202E243F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueLineTracker", "BlueLineTracker\BlueLineTracker.csproj", "{C4F2B533-88EA-4D1D-BC94-DFDA202E243F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

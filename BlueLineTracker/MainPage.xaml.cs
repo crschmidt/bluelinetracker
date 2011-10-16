@@ -11,7 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 
-namespace RedLineTracker
+namespace BlueLineTracker
 {
     public partial class MainPage : PhoneApplicationPage
     {
@@ -21,14 +21,14 @@ namespace RedLineTracker
             InitializeComponent();
         }
 
-        private void Southbound_Button_Click(object sender, RoutedEventArgs e)
+        private void Westbound_Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/RouteSelect.xaml?direction=S", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/RouteSelect.xaml?direction=W", UriKind.Relative));
         }
 
-        private void Northbound_Button_Click(object sender, RoutedEventArgs e)
+        private void Eastbound_Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/RouteSelect.xaml?direction=N", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/RouteSelect.xaml?direction=E", UriKind.Relative));
         }
     }
 }
